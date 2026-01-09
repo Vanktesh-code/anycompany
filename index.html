@@ -147,6 +147,17 @@
   amazon_connect('styles', { iconType: 'CHAT', openChat: { color: '#ffffff', backgroundColor: '#123456' }, closeChat: { color: '#ffffff', backgroundColor: '#123456'} });
   amazon_connect('snippetId', 'QVFJREFIaWo1bjUrNHh3YUNxMFR6bFhIL0l0R2VWazhXRkMydERSWjlMdlNMbGMvWEFHU3FlSFJ6aHNnejhQZkk0bFFGRHNLQUFBQWJqQnNCZ2txaGtpRzl3MEJCd2FnWHpCZEFnRUFNRmdHQ1NxR1NJYjNEUUVIQVRBZUJnbGdoa2dCWlFNRUFTNHdFUVFNSC9YZnlsTE5mNjhUelBnWUFnRVFnQ3ViZ3MzRXpDVHByMFM1RWFXc3Uxdmo4a3hWUXZOSXlWbDQxUUxEVzZPREpiYi8yMWQrRjloN3VabDA6OithVW9qM01NL2hvNlBBd1gzRzVPL1RhSzI4RnNRSDlaelJ0Q3F1eElVVXIra2RZdERzSzhsbnNzdDIyN0UxbVBJTUJFWTByL1BUNlZySGduNVAxUnJrNllGd0o3U2p5enFCdVZFN3VOaGI5WHlNTkNZOHV5KzIrRU1lVEdXL1I5MGJrUitsamZoclYwQTFDRWt6ZW9sYmlvdlRaOW15ND0=');
   amazon_connect('supportedMessagingContentTypes', [ 'text/plain', 'text/markdown', 'application/vnd.amazonaws.connect.message.interactive', 'application/vnd.amazonaws.connect.message.interactive.response' ]);
+  // Customer Authentication
+  amazon_connect('authenticationParameters', {
+      redirectUri: "https://main.d2cj95togb9hkk.amplifyapp.com/auth-callback", // Replace with your redirect webpage URL to handle Auth flow
+  });
+
+  amazon_connect('registerCallback', {
+      'AUTHENTICATION_INITIATED': (eventName, data) => {
+          console.log('Authentication Initiated:', eventName, data);
+      }
+  });
+
 </script>
 
 <!-- Chat Widget script end - PASE YOUR CHAT WIDGET CODE ABOVE -->
